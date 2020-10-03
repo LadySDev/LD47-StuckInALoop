@@ -160,6 +160,10 @@
     <None Include="sfml-window-2.dll" />
     <None Include="sfml-window-d-2.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\player.png" />
+    <Image Include="resource\tilesheet.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
