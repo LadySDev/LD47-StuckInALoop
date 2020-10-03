@@ -40,4 +40,7 @@
       <Filter>Fichiers de ressources</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="resource\Eternity Time.ttf" />
+  </ItemGroup>
 </Project>

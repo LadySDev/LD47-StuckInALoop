@@ -164,6 +164,9 @@
     <Image Include="resource\player.png" />
     <Image Include="resource\tilesheet.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="resource\Eternity Time.ttf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
