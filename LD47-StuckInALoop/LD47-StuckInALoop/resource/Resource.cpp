@@ -41,6 +41,12 @@ Resource::Resource()
     titleBg.setFillColor(sf::Color(128,128,128,255));
     m_rectangleShapes.insert(std::pair<std::string, sf::RectangleShape>("titleBg", titleBg));
 
+    sf::RectangleShape choiceBg;
+    choiceBg.setSize(sf::Vector2f(1280, 720));
+    choiceBg.setPosition(0, 0);
+    choiceBg.setFillColor(sf::Color(128, 128, 128, 255));
+    m_rectangleShapes.insert(std::pair<std::string, sf::RectangleShape>("choiceBg", choiceBg));
+
     sf::RectangleShape gameBg;
     gameBg.setSize(sf::Vector2f(1280, 720));
     gameBg.setPosition(0, 0);

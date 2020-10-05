@@ -5,6 +5,8 @@ SceneGame::SceneGame(Game* game, int level)
 {
 	m_game = game;
 
+    m_shapeBackGround = m_game->getResource()->getRectangleShape("gameBg");
+
     m_startPosition = sf::Vector2f(336, 100);
 
     //LEVEL 1//
@@ -580,6 +582,7 @@ void SceneGame::update(float deltaTime)
 
 void SceneGame::render(sf::RenderWindow* window)
 {
+    window->draw(m_shapeBackGround);
     m_mapgame->render(window);    
     m_uigame->render(window);
     window->draw(m_playerSprite);

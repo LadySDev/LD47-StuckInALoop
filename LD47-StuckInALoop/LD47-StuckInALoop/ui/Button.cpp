@@ -126,6 +126,11 @@ int Button::getTextCharacterSize()
 	return m_text.getCharacterSize();
 }
 
+std::string Button::getText()
+{
+	return m_text.getString();
+}
+
 void Button::draw(sf::RenderWindow* window)
 {
 	window->draw(m_image);

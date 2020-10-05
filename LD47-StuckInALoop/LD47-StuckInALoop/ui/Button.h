@@ -21,6 +21,7 @@ public:
 	sf::Vector2f getSize();
 	sf::Vector2f getTextSize();
 	int getTextCharacterSize();
+	std::string getText();
 
 	void draw(sf::RenderWindow* window);
 

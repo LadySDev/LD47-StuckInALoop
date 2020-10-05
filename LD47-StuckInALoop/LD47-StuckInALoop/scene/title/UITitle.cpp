@@ -5,7 +5,15 @@ UITitle::UITitle(SceneTitle* sceneTitle)
 {
 	m_sceneTitle = sceneTitle;
 
-  
+    m_shapeTitle.setSize(sf::Vector2f(32 * 19, 50));
+    m_shapeTitle.setPosition(sf::Vector2f(m_sceneTitle->getSize().x / 2 - m_shapeTitle.getSize().x / 2, 10));
+
+    m_textTitle.setFont(*m_sceneTitle->getResource()->getFont());
+    m_textTitle.setCharacterSize(40);
+    m_textTitle.setFillColor(sf::Color::Black);
+    m_textTitle.setString("RED OVERDOSE");
+    m_textTitle.setPosition(sf::Vector2f(m_sceneTitle->getSize().x / 2 - m_textTitle.getGlobalBounds().width / 2, 15));
+
 	m_buttonNewGame = m_sceneTitle->getResource()->getButton();
 	m_buttonNewGame.setText("NEW GAME");
 	m_buttonNewGame.setTextPosition(sf::Vector2f(m_buttonNewGame.getPosition().x + m_buttonNewGame.getSize().x / 2 - m_buttonNewGame.getTextSize().x / 2, m_buttonNewGame.getPosition().y + m_buttonNewGame.getSize().y / 2 - m_buttonNewGame.getTextSize().y / 2));
@@ -109,14 +117,19 @@ bool UITitle::processEvent(sf::Event event)
                 if (event.type == sf::Event::KeyPressed)
                 {
                     if (m_currentButton == &m_buttonNewGame) {
-                        m_sceneTitle->launchScene("title", "game", 1);
                         m_buttonNewGame.setPressed();
+                        m_buttonNewGame.setReleased();
+                        m_sceneTitle->launchScene("title", "game", 1);
+                        
                     }
                     else if (m_currentButton == &m_buttonLevels) {
                         m_buttonLevels.setPressed();
+                        m_buttonLevels.setReleased();
+                        m_sceneTitle->launchScene("title", "choice", NULL);
                     }
                     else if (m_currentButton == &m_buttonQuit) {
                         m_buttonQuit.setPressed();
+                        m_buttonQuit.setReleased();
                         m_sceneTitle->quit();
                     }
                 }
@@ -132,6 +145,9 @@ void UITitle::update(float deltaTime)
 
 void UITitle::render(sf::RenderWindow* window)
 {
+    window->draw(m_shapeTitle);
+    window->draw(m_textTitle);
+
 	m_buttonNewGame.draw(window);
 	m_buttonLevels.draw(window);
 	m_buttonQuit.draw(window);

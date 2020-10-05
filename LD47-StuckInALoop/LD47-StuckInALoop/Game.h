@@ -5,6 +5,8 @@
 class SceneTitle;
 #include "scene/game/SceneGame.h"
 class SceneGame;
+#include "scene/levelChoice/SceneChoice.h"
+class SceneChoice;
 
 class Game
 {
@@ -27,4 +29,5 @@ private:
 	
 	SceneTitle* m_sceneTitle;
 	SceneGame* m_sceneGame;
+	SceneChoice* m_sceneChoice;
 };

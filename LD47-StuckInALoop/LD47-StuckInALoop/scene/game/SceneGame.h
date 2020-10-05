@@ -35,7 +35,7 @@ public:
 	void launchScene(std::string from, std::string to, int level);
 private:
 	Game* m_game;
-	//sf::RectangleShape m_backGround;
+	sf::RectangleShape m_shapeBackGround;
 
 	UIGame* m_uigame;
 	MapGame* m_mapgame;

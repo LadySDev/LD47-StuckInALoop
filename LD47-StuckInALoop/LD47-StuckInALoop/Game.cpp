@@ -2,12 +2,10 @@
 
 Game::Game()
 {
-	m_window.create(sf::VideoMode(1280, 720), "LD47 Stuck in a loop");
+	m_window.create(sf::VideoMode(1280, 720), "LD47 Stuck in a loop", sf::Style::None);
 	m_window.setFramerateLimit(30);
 
 	m_resource = new Resource();
-	//launchScene("game", 1);
-	//m_sceneGame = new SceneGame(this, 1);
 	m_sceneTitle = new SceneTitle(this);
 
 	while (m_window.isOpen())
@@ -39,6 +37,9 @@ void Game::processEvent(sf::Event event)
 	else if (m_sceneGame != NULL) {
 		m_sceneGame->processEvent(event);
 	}
+	else if (m_sceneChoice != NULL) {
+		m_sceneChoice->processEvent(event);
+	}
 }
 
 void Game::update(float deltaTime)
@@ -49,6 +50,9 @@ void Game::update(float deltaTime)
 	else if (m_sceneGame != NULL) {
 		m_sceneGame->update(deltaTime);
 	}
+	else if (m_sceneChoice != NULL) {
+		m_sceneChoice->update(deltaTime);
+	}
 }
 
 void Game::render()
@@ -58,6 +62,9 @@ void Game::render()
 	}
 	else if (m_sceneGame != NULL) {
 		m_sceneGame->render(&m_window);
+	}
+	else if (m_sceneChoice != NULL) {
+		m_sceneChoice->render(&m_window);
 	}
 }
 
@@ -84,12 +91,18 @@ void Game::launchScene(std::string from, std::string to, int level)
 	else if (from == "game") {
 		m_sceneGame = NULL;
 	}
+	else if (from == "choice") {
+		m_sceneChoice = NULL;
+	}
 
 	if (to == "title") {
 		m_sceneTitle = new SceneTitle(this);
 	}
 	else if (to == "game") {
 		m_sceneGame = new SceneGame(this, level);
+	}
+	else if (to == "choice") {
+		m_sceneChoice = new SceneChoice(this);
 	}
 }
 

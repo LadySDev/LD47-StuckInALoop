@@ -1,24 +1,24 @@
 #pragma once
 #include "../../ui/UI.h"
-#include "SceneTitle.h"
-class SceneTitle;
+#include "SceneChoice.h"
+class SceneChoice;
 
-
-class UITitle: public UI
+class UIChoice
 {
 public:
-	UITitle(SceneTitle* sceneTitle);
+	UIChoice(SceneChoice* sceneChoice);
 	virtual bool processEvent(sf::Event event);
 	virtual void update(float deltaTime);
 	virtual void render(sf::RenderWindow* window);
 private:
-	SceneTitle* m_sceneTitle;
-
+	SceneChoice* m_sceneChoice;
 	sf::RectangleShape m_shapeTitle;
 	sf::Text m_textTitle;
 
-	Button m_buttonNewGame;
-	Button m_buttonLevels;
-	Button m_buttonQuit;
+	int m_rows;
+	int m_cols;
+
+	std::vector<std::vector<Button>> m_buttonLevels;
+	Button m_buttonBack;
 	Button* m_currentButton;
 };
