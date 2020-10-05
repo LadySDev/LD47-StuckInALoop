@@ -145,7 +145,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="resource\Resource.cpp" />
+    <ClCompile Include="scene\game\MapGame.cpp" />
+    <ClCompile Include="scene\game\SceneGame.cpp" />
+    <ClCompile Include="scene\game\UIGame.cpp" />
+    <ClCompile Include="scene\game\UIGameMenu.cpp" />
+    <ClCompile Include="scene\Scene.cpp" />
+    <ClCompile Include="scene\title\SceneTitle.cpp" />
+    <ClCompile Include="scene\title\UITitle.cpp" />
+    <ClCompile Include="ui\Button.cpp" />
+    <ClCompile Include="ui\UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="openal32.dll" />
@@ -162,10 +173,24 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="resource\player.png" />
+    <Image Include="resource\playersheet.png" />
     <Image Include="resource\tilesheet.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="resource\Eternity Time.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="resource\Resource.h" />
+    <ClInclude Include="scene\game\MapGame.h" />
+    <ClInclude Include="scene\game\SceneGame.h" />
+    <ClInclude Include="scene\game\UIGame.h" />
+    <ClInclude Include="scene\game\UIGameMenu.h" />
+    <ClInclude Include="scene\Scene.h" />
+    <ClInclude Include="scene\title\SceneTitle.h" />
+    <ClInclude Include="scene\title\UITitle.h" />
+    <ClInclude Include="ui\Button.h" />
+    <ClInclude Include="ui\UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
